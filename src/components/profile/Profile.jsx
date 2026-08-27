@@ -104,14 +104,14 @@ const Profile = () => {
     }
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
-            <div className="flex items-center justify-between mb-8">
-                <h2 className="text-3xl font-bold text-gray-900">
+        <div className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm sm:p-8">
+            <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
                     Personal Information
                 </h2>
                 <button
                     onClick={handleEditToggle}
-                    className="flex items-center gap-2 px-5 py-2.5 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition font-medium"
+                    className="flex w-fit items-center gap-2 rounded-lg bg-slate-800 px-4 py-2.5 font-medium text-white transition hover:bg-slate-700 sm:px-5"
                 >
                     {isEditing ? (
                         <>
@@ -145,7 +145,7 @@ const Profile = () => {
 
             {/* User Name */}
             <div className="text-center mb-10">
-                <h3 className="text-3xl font-bold text-gray-900 mb-1">
+                <h3 className="mb-1 break-words text-2xl font-bold text-gray-900 sm:text-3xl">
                     {user.first_name} {user.last_name}
                 </h3>
                 <p className="text-gray-500">

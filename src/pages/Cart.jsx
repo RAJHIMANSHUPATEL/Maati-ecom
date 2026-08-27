@@ -260,7 +260,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto my-10 rounded-2xl p-4 sm:p-6">
+    <div className="mx-auto my-6 max-w-screen-xl px-4 sm:my-10 sm:p-6">
       <Stepper currentStep={currentStep} steps={steps} />
 
       {currentStep === 0 && (

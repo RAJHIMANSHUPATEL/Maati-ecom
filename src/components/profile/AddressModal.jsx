@@ -59,8 +59,8 @@ const AddressModal = ({ isOpen, onClose, address, onSave }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
+            <div className="max-h-[calc(100dvh-2rem)] w-full max-w-md overflow-y-auto rounded-lg bg-white p-5 shadow-xl sm:p-8">
                 <div className="flex items-center justify-between mb-6">
                     <h3 className="text-2xl font-bold text-gray-900">
                         {address ? 'Edit Address' : 'Add New Address'}

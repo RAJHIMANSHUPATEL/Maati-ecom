@@ -98,7 +98,7 @@ export default function CartStep1({
                         return (
                             <div
                                 key={item.id}
-                                className="flex gap-4 border border-neutral-200 rounded-lg p-4 shadow-sm bg-white items-center"
+                                className="flex min-w-0 flex-col gap-3 border border-rule bg-paper p-3 sm:flex-row sm:items-center sm:gap-4 sm:p-4"
                             >
                                 {/* Image */}
                                 <div className="w-20 h-20 flex-shrink-0">
@@ -116,8 +116,8 @@ export default function CartStep1({
                                 </div>
 
                                 {/* Details */}
-                                <div className="flex-1">
-                                    <p className="font-semibold text-sm sm:text-base">
+                                <div className="min-w-0 flex-1">
+                                    <p className="break-words font-semibold text-sm sm:text-base">
                                         {item.name || "Product"}
                                     </p>
 
@@ -139,7 +139,7 @@ export default function CartStep1({
                                 </div>
 
                                 {/* Quantity + Total */}
-                                <div className="flex flex-col items-end gap-2">
+                                <div className="flex shrink-0 flex-row items-center justify-between gap-3 sm:flex-col sm:items-end">
                                     {/* Quantity Controls */}
                                     <div className="flex items-center border border-neutral-300 rounded-full overflow-hidden h-9">
                                         <SfButton
@@ -225,12 +225,12 @@ export default function CartStep1({
                             </p>
                             <form
                                 onSubmit={handleApplyCoupon}
-                                className="flex items-center gap-2"
+                                className="flex min-w-0 items-center gap-2"
                             >
                                 <input
                                     type="text"
                                     placeholder="Enter coupon code"
-                                    className="flex-1 border border-neutral-300 rounded-md px-3 py-2 text-sm"
+                                    className="min-w-0 flex-1 border border-neutral-300 rounded-md px-3 py-2 text-sm"
                                     value={couponCode}
                                     onChange={(e) =>
                                         setCouponCode(e.target.value)

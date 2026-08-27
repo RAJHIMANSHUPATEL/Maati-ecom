@@ -82,7 +82,7 @@ const ProductCard = ({
   };
 
   return (
-    <article className="flex h-full flex-col border border-rule bg-paper">
+    <article className="flex h-full min-w-0 flex-col border border-rule bg-paper">
       <NavLink to={productPath(name, id)} className="relative block bg-rule/30">
         {discount > 0 && (
           <span className="absolute left-0 top-0 z-10 bg-chilli px-2 py-0.5 text-[11px] uppercase tracking-wide text-white">
@@ -107,7 +107,7 @@ const ProductCard = ({
       <div className="flex flex-1 flex-col gap-2 p-3">
         <NavLink
           to={productPath(name, id)}
-          className="font-serif text-[1.05rem] leading-snug text-ink no-underline hover:italic"
+          className="break-words font-serif text-[1.05rem] leading-snug text-ink no-underline hover:italic"
         >
           {name}
         </NavLink>
@@ -121,8 +121,8 @@ const ProductCard = ({
             <span className="text-ink/50">{unitLabel}</span>
           </p>
 
-          <div className="mt-3 flex items-center gap-2">
-            <div className="flex h-8 items-center border border-rule">
+          <div className="mt-3 flex flex-col gap-2">
+            <div className="flex h-8 w-fit items-center border border-rule">
               <SfButton
                 variant="tertiary"
                 square
@@ -160,7 +160,7 @@ const ProductCard = ({
               type="button"
               disabled={!stockStatus}
               onClick={handleAddToCart}
-              className="border-b border-ink pb-0.5 text-sm disabled:border-ink/30 disabled:text-ink/40"
+              className="w-fit border-b border-ink pb-0.5 text-left text-sm disabled:border-ink/30 disabled:text-ink/40"
             >
               {stockStatus ? (inCart ? "Update bag" : "Add to bag") : "Sold out"}
             </button>

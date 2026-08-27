@@ -57,7 +57,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-paper p-6 gap-6">
-      <Link to="/" className="font-serif italic text-4xl text-ink no-underline">
+      <Link to="/" className="font-serif italic text-3xl text-ink no-underline sm:text-4xl">
         Maati
       </Link>
       <form

@@ -76,7 +76,7 @@ export default React.memo(function StoreSelectorModal() {
   const open = !selectedStore;
 
   return (
-    <SfModal open={open} onClose={() => {}} className="max-w-lg w-full sm:max-w-2xl">
+    <SfModal open={open} onClose={() => {}} className="mx-4 max-w-lg w-[calc(100vw-2rem)] sm:max-w-2xl">
       <div className="bg-paper p-5">
         <h2 className="font-serif text-2xl text-ink">Which store are you near?</h2>
         <p className="mt-1 text-sm text-ink/60">
@@ -95,16 +95,16 @@ export default React.memo(function StoreSelectorModal() {
                   key={s._id}
                   type="button"
                   onClick={() => dispatch(selectStore(s))}
-                  className="flex w-full items-center gap-4 border border-rule bg-paper p-3 text-left hover:bg-white"
+                  className="flex w-full min-w-0 items-center gap-3 border border-rule bg-paper p-3 text-left hover:bg-white sm:gap-4"
                 >
                   <img
                     src={resolveImageUrl(s.cover)}
                     alt=""
-                    className="h-16 w-16 object-cover"
+                    className="h-14 w-14 shrink-0 object-cover sm:h-16 sm:w-16"
                   />
-                  <span>
-                    <span className="block font-serif text-lg">{s.name}</span>
-                    <span className="block text-sm text-ink/60">{s.address}</span>
+                  <span className="min-w-0">
+                    <span className="block break-words font-serif text-lg">{s.name}</span>
+                    <span className="block break-words text-sm text-ink/60">{s.address}</span>
                     <span className="block text-sm text-ink/50">{s.city}</span>
                   </span>
                 </button>

@@ -15,15 +15,15 @@ const ProductSlider = ({ products, title = "In the shop today", kicker }) => {
               {kicker}
             </p>
           )}
-          <h2 className="font-serif text-3xl text-ink">{title}</h2>
+          <h2 className="font-serif text-2xl text-ink sm:text-3xl">{title}</h2>
         </div>
         <Link to="/products" className="text-sm text-ink/70 no-underline hover:text-ink">
           Full list
         </Link>
       </div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
         {shown.map((p) => (
-          <div key={p._id} className="bg-paper">
+          <div key={p._id} className="min-w-0 bg-paper">
             <ProductCard
               id={p._id}
               name={p.name}

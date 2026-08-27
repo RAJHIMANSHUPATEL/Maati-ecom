@@ -66,7 +66,7 @@ const ProfilePageLayout = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-slate-800 to-slate-700 py-16 px-4">
+      <div className="bg-gradient-to-r from-slate-800 to-slate-700 px-4 py-8 md:py-16">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
             <div className="relative">
@@ -80,10 +80,10 @@ const ProfilePageLayout = ({ children }) => {
               </button>
             </div>
             <div className="text-white text-center md:text-left flex-1">
-              <h1 className="text-4xl font-bold mb-2">
+            <h1 className="mb-2 text-2xl font-bold md:text-4xl">
                 {user.first_name} {user.last_name}
               </h1>
-              <p className="text-slate-200 text-lg mb-1 flex items-center justify-center md:justify-start gap-2">
+              <p className="mb-1 flex items-center justify-center gap-2 break-all text-slate-200 md:justify-start">
                 <Mail className="w-4 h-4" />
                 {user.email}
               </p>
@@ -108,16 +108,16 @@ const ProfilePageLayout = ({ children }) => {
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Sidebar */}
           <div className="lg:w-72 flex-shrink-0">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden sticky top-4">
-              <div className="p-5 bg-gradient-to-r from-slate-50 to-gray-50 border-b">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden lg:sticky lg:top-4">
+              <div className="hidden border-b p-5 lg:block">
                 <h2 className="font-bold text-gray-800 text-lg">My Account</h2>
               </div>
-              <nav className="flex flex-col p-2">
+              <nav className="flex gap-1 overflow-x-auto p-2 lg:flex-col [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {profileTabs.map((tab) => (
                   <NavLink
                     key={tab.path}
                     to={tab.path}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all ${
+                    className={`flex shrink-0 items-center gap-2 px-3 py-2 text-left text-sm transition-all lg:gap-3 lg:px-4 lg:py-3 lg:text-base ${
                       location.pathname === tab.path
                         ? "bg-slate-800 text-white shadow-md"
                         : "text-gray-700 hover:bg-gray-50"

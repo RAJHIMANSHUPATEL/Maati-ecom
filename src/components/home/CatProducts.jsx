@@ -15,22 +15,22 @@ const CatProducts = ({ products }) => {
       {aisles.map((cat) => (
         <section key={cat.category}>
           <div className="mb-6 flex items-baseline justify-between border-b border-rule pb-3">
-            <h2 className="font-serif text-3xl text-ink">{cat.category}</h2>
+          <h2 className="font-serif text-2xl text-ink sm:text-3xl">{cat.category}</h2>
             {cat.products[0]?.category && (
               <NavLink
                 to={`/products/cid/${formatSlugId(
                   String(cat.products[0].category._id || cat.products[0].category),
                   cat.category
                 )}`}
-                className="text-sm text-ink/70 no-underline hover:text-ink"
+                className="max-w-[45%] truncate text-sm text-ink/70 no-underline hover:text-ink"
               >
                 The rest of {cat.category.toLowerCase()}
               </NavLink>
             )}
           </div>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
             {cat.products.slice(0, 4).map((product) => (
-              <div key={product._id} className="bg-paper">
+              <div key={product._id} className="min-w-0 bg-paper">
                 <ProductCard
                   id={product._id}
                   name={product.name}

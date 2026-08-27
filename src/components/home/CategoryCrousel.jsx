@@ -9,7 +9,7 @@ const CategoryCrousel = ({ categories = [] }) => {
   return (
     <section className="mx-auto max-w-6xl px-4 py-14 md:px-8">
       <div className="mb-8 flex items-baseline justify-between border-b border-rule pb-3">
-        <h2 className="font-serif text-3xl text-ink">The list</h2>
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">The list</h2>
         <NavLink
           to="/products"
           className="text-sm text-ink/70 no-underline hover:text-ink"

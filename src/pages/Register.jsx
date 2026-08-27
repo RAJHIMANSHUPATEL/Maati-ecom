@@ -150,7 +150,7 @@ const Register = () => {
     <div className="min-h-screen flex items-center justify-center bg-paper p-4">
       <div className="border border-rule bg-paper p-6 w-full max-w-lg h-[90vh] flex flex-col">
         <div className="flex flex-col items-center flex-shrink-0">
-          <Link to="/" className="mb-2 font-serif italic text-4xl text-ink no-underline">
+          <Link to="/" className="mb-2 font-serif italic text-3xl text-ink no-underline sm:text-4xl">
             Maati
           </Link>
           <h2 className="font-serif text-2xl text-center">Open an account</h2>

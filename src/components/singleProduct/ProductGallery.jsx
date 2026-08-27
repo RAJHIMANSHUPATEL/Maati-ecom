@@ -50,7 +50,7 @@ function ProductGallery({ images = [] }) {
             <img
               alt={`product-image-${index}`}
               aria-hidden={activeIndex !== index}
-              className="object-contain w-auto h-full"
+              className="h-full w-full max-w-full object-contain"
               src={resolveImageUrl(img)}
             />
           </div>

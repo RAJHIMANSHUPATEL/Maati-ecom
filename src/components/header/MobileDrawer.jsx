@@ -29,10 +29,10 @@ const MobileDrawer = ({
       open={isMobileDrawerOpen}
       onClose={closeMobileDrawer}
       placement="left"
-      className="md:hidden right-[50px] max-w-[376px] bg-white overflow-y-auto z-20"
+      className="md:hidden right-3 max-w-[min(22rem,calc(100vw-1.5rem))] bg-paper overflow-y-auto z-20"
     >
       <nav>
-        <div className="flex items-center justify-between p-4 border-b border-b-neutral-200 border-b-solid">
+        <div className="flex items-center justify-between border-b border-rule p-4">
           <Wordmark className="text-3xl" />
           <SfButton
             onClick={closeMobileDrawer}
@@ -46,15 +46,15 @@ const MobileDrawer = ({
         </div>
 
         {/* Mobile Select Store */}
-        <div className="p-4 border-b border-b-neutral-200">
-          <label className="block mb-2 text-sm font-medium text-neutral-700">
-            Select Store
+        <div className="border-b border-rule p-4">
+          <label className="mb-2 block text-sm text-ink/70">
+            Select store
           </label>
           <StoreSelector
             stores={stores}
             selectedStore={selectedStore}
             onChange={handleStoreChange}
-            className="w-full rounded-lg border border-neutral-300 px-2 py-1"
+            className="w-full border-0 border-b border-rule bg-transparent px-0 py-1"
           />
         </div>
 

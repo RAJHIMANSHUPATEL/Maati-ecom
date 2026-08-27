@@ -7,7 +7,7 @@ import {
   useDisclosure,
   SfIconShoppingCart,
 } from "@storefront-ui/react";
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { selectStore } from "../../redux/storeSlice";
 import useApi from "../../hooks/useApi";
@@ -93,7 +93,7 @@ const AppHeader = () => {
     isOpen: isDropdownOpen,
   } = useDisclosure();
 
-  const { refs, style } = useDropdown({
+  const { refs } = useDropdown({
     isDropdownOpen,
     placement: "bottom-start",
     middleware: [],
@@ -149,7 +149,7 @@ const AppHeader = () => {
 
   return (
     <div className="w-full">
-      <header className="relative overflow-visible border-b border-rule bg-paper" ref={refs.setReference}>
+      <header className="relative min-w-0 overflow-visible border-b border-rule bg-paper" ref={refs.setReference}>
         <p className="hidden border-b border-rule px-4 py-1.5 text-center text-[11px] uppercase tracking-[0.22em] text-ink/60 md:block">
           {today} · {BRAND.cities} · pay when it arrives
         </p>
@@ -184,13 +184,30 @@ const AppHeader = () => {
             inputValue={inputValue}
             setInputValue={setInputValue}
             onSubmit={search}
-            className="col-span-2 flex w-full md:col-span-1 md:col-start-2 md:row-start-1"
+            className="col-span-2 flex min-w-0 w-full md:col-span-1 md:col-start-2 md:row-start-1"
           />
 
           <div className="col-start-2 row-start-1 md:col-start-3">
             <ActionItems actionItems={actionItems} user={user} logout={logout} />
           </div>
         </div>
+
+        {menuContent?.children?.length > 0 && (
+          <div className="min-w-0 border-t border-rule md:hidden">
+            <ul className="flex gap-2 overflow-x-auto overscroll-x-contain px-4 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {menuContent.children.map((node) => (
+                <li key={node.key} className="shrink-0">
+                  <NavLink
+                    to={node.value.link || "/products"}
+                    className="block whitespace-nowrap border border-rule px-3 py-1 text-sm text-ink no-underline"
+                  >
+                    {node.value.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {menuContent && (
           <DesktopMenu
@@ -203,8 +220,6 @@ const AppHeader = () => {
             closeDropdown={closeDropdown}
             isDropdownOpen={isDropdownOpen}
             megaMenuRef={megaMenuRef}
-            style={style}
-            refs={refs.setFloating}
           />
         )}
 

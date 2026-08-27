@@ -223,7 +223,7 @@ const handleCartClick = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto max-w-6xl overflow-x-clip px-4 py-6">
       {/* Top: gallery + details */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Gallery: full width on mobile (col-span all), left on desktop (col-span 7) */}
@@ -233,9 +233,9 @@ const handleCartClick = () => {
 
         {/* Details: right side on desktop (col-span 5) */}
         <div className="lg:col-span-5 col-span-1">
-  <div className="bg-white p-6 rounded-lg shadow-md border border-neutral-200">
+  <div className="rounded-lg border border-neutral-200 bg-white p-4 shadow-md sm:p-6">
     {/* Title */}
-    <h1 className="text-2xl font-semibold text-neutral-900 mb-3">
+    <h1 className="mb-3 break-words text-xl font-semibold text-neutral-900 sm:text-2xl">
       {product.name}
     </h1>
 
@@ -281,11 +281,11 @@ const handleCartClick = () => {
     {/* Quantity selector */}
     <div className="mb-5">
       {isSliderUnit ? (
-        <div className="w-full">
-          <div className="relative w-full">
+        <div className="w-full overflow-x-clip">
+          <div className="relative w-full px-4">
             {/* Floating value */}
             <div
-              className="absolute -top-6 transform -translate-x-1/2 px-2 py-1 bg-neutral-800 text-white text-xs rounded"
+              className="absolute -top-6 max-w-full -translate-x-1/2 rounded bg-neutral-800 px-2 py-1 text-xs text-white"
               style={{
                 left: `${((qty - min) / (max - min)) * 100}%`,
               }}
@@ -407,6 +407,7 @@ const handleCartClick = () => {
         ) : similarProducts.length === 0 ? (
           <div className="text-neutral-500">No similar products available.</div>
         ) : (
+          <div className="overflow-hidden">
           <Swiper
             modules={[Scrollbar, Navigation]}
             scrollbar={{ draggable: true }}
@@ -446,6 +447,7 @@ const handleCartClick = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          </div>
         )}
       </div>
     </div>

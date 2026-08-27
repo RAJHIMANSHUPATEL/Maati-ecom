@@ -32,7 +32,7 @@ export default memo(function MobileFilterDrawer({
   return (
     <>
       {/* Open button visible only on mobile */}
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         <SfButton size="sm" onClick={() => setOpen(true)}>
           Filters
         </SfButton>
@@ -46,7 +46,7 @@ export default memo(function MobileFilterDrawer({
             placement="left"
             onClose={() => setOpen(false)}
             className={classNames(
-              "bg-white border-r border-gray-200 w-[300px] h-full duration-500 transition ease-in-out z-20 px-2",
+              "z-20 h-full w-[min(300px,calc(100vw-1.5rem))] border-r border-gray-200 bg-white px-2 duration-500 transition ease-in-out",
               {
                 "translate-x-0": state === "entered",
                 "-translate-x-full": state === "entering" || state === "exited",

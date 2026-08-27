@@ -73,7 +73,7 @@ export default function CartStep3({ checkoutDetails, updateCheckoutDetails, deli
         {items.map((item) => (
           <div
             key={item.id}
-            className="flex gap-4 border border-neutral-200 rounded-lg p-4 bg-white"
+            className="flex min-w-0 gap-3 border border-neutral-200 rounded-lg p-3 sm:gap-4 sm:p-4 bg-white"
           >
             {/* Image */}
             <div className="w-16 h-16 flex-shrink-0">
@@ -91,8 +91,8 @@ export default function CartStep3({ checkoutDetails, updateCheckoutDetails, deli
             </div>
 
             {/* Details */}
-            <div className="flex-1">
-              <p className="font-semibold text-sm">{item.name}</p>
+            <div className="min-w-0 flex-1">
+              <p className="break-words font-semibold text-sm">{item.name}</p>
               <p className="text-xs text-neutral-600">
                 ₹{Number(item.amount).toFixed(2)} × {item.quantity}
               </p>
@@ -105,7 +105,7 @@ export default function CartStep3({ checkoutDetails, updateCheckoutDetails, deli
             </div>
 
             {/* Line Total */}
-            <div className="font-semibold text-sm">
+            <div className="shrink-0 font-semibold text-sm">
               ₹{Number(item.line_total).toFixed(2)}
             </div>
           </div>

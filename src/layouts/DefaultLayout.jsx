@@ -4,8 +4,8 @@ import AppHeader from "../components/header/AppHeader";
 
 const DefaultLayout = () => {
   return (
-    <div className="min-h-screen bg-paper font-sans text-ink">
-      <div className="flex min-h-screen flex-col">
+    <div className="min-h-screen min-w-0 overflow-x-clip bg-paper font-sans text-ink">
+      <div className="flex min-w-0 flex-col">
         <AppHeader />
         <div className="flex-grow">
           <AppContent />

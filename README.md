@@ -1,4 +1,4 @@
-# GreenFarm website
+# Maati website
 
 Customer storefront (React + Vite). COD checkout only.
 

@@ -140,8 +140,8 @@ const AllProducts = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <div className="flex gap-6">
+    <div className="container mx-auto min-w-0 px-4 py-6">
+      <div className="flex min-w-0 gap-6">
         {/* Sidebar - desktop only */}
         <aside className="hidden lg:block w-72">
           <div className="sticky top-20">
@@ -215,9 +215,9 @@ const AllProducts = () => {
         </aside>
 
         {/* Main content */}
-        <main className="flex-1">
+        <main className="min-w-0 flex-1">
           {/* Mobile filter bar */}
-          <div className="lg:hidden mb-4 flex items-center justify-between gap-2">
+          <div className="mb-4 flex min-w-0 items-center justify-between gap-2 lg:hidden">
             <MobileFilterDrawer
               discount={discountOnly}
               setDiscountOnly={setDiscountOnly}
@@ -230,7 +230,7 @@ const AllProducts = () => {
               sortBy={sortBy}
               setSortBy={setSortBy}
             />
-            <div>
+            <div className="min-w-0 flex-1">
               <DropdownSelection
                 options={[
                   { label: "Default", value: "" },
@@ -253,14 +253,14 @@ const AllProducts = () => {
           <hr className="my-4 border-t border-gray-300" />
 
           {/* Products grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
             {products.length === 0 && !loading && (
               <div className="col-span-full text-center text-neutral-600 py-12">
                 No products found.
               </div>
             )}
             {products.map((p) => (
-              <div key={p._id || p.id} className="w-full">
+              <div key={p._id || p.id} className="min-w-0 w-full">
                 <ProductCard
                   key={p._id}
                   id={p._id}

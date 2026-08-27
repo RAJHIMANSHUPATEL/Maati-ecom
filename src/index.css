@@ -4,10 +4,13 @@
 
 @layer base {
   html {
-    @apply bg-paper text-ink antialiased;
+    @apply overflow-x-clip bg-paper text-ink antialiased;
   }
   body {
-    @apply bg-paper font-sans text-ink;
+    @apply max-w-[100vw] overflow-x-clip bg-paper font-sans text-ink;
+  }
+  #root {
+    @apply min-w-0 max-w-[100vw] overflow-x-clip;
   }
   ::selection {
     background: #e8d3c4;

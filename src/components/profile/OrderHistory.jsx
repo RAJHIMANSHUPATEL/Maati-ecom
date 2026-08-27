@@ -36,7 +36,7 @@ const OrderHistory = () => {
   if (selected) {
     const items = parseItems(selected.product_details);
     return (
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+      <div className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm sm:p-8">
         <button
           className="text-sm text-slate-600 mb-4 hover:underline"
           onClick={() => setSelected(null)}
@@ -56,14 +56,14 @@ const OrderHistory = () => {
               key={idx}
               className="flex justify-between border-b border-gray-100 pb-2 text-sm"
             >
-              <span>
+              <span className="min-w-0 break-words">
                 {item.name || "Product"} × {item.quantity || 1}
               </span>
               <span>₹{Number(item.price || 0).toFixed(2)}</span>
             </div>
           ))}
         </div>
-        <p className="text-sm text-gray-600 mb-2">
+        <p className="mb-2 break-words text-sm text-gray-600">
           Address: {selected.address}
         </p>
         {selected.notes && (
@@ -77,8 +77,8 @@ const OrderHistory = () => {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">Order History</h2>
+    <div className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm sm:p-8">
+      <h2 className="mb-6 text-2xl font-bold text-gray-900 sm:text-3xl">Order History</h2>
       {loading && orders.length === 0 ? (
         <p className="text-gray-500">Loading orders...</p>
       ) : orders.length === 0 ? (

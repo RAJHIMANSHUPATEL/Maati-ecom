@@ -30,9 +30,9 @@ const AppFooter = () => {
 
   return (
     <footer className="border-t border-rule bg-paper">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-4 md:px-8">
-        <div className="md:col-span-2">
-          <Wordmark className="text-4xl" />
+      <div className="mx-auto grid max-w-6xl min-w-0 gap-10 px-4 py-10 md:grid-cols-4 md:px-8 md:py-14">
+        <div className="min-w-0 md:col-span-2">
+          <Wordmark className="text-3xl sm:text-4xl" />
           <p className="mt-3 max-w-sm font-serif text-lg italic text-ink/70">
             {BRAND.tagline}. Two stores, one list, cash at the door.
           </p>

@@ -15,7 +15,7 @@ const HeroCrousel = ({ images = [] }) => {
           <p className="text-[11px] uppercase tracking-[0.28em] text-ink/50">
             {BRAND.name} · {BRAND.cities}
           </p>
-          <h1 className="mt-4 font-serif text-4xl leading-[1.15] text-ink md:text-5xl">
+          <h1 className="mt-4 font-serif text-[1.65rem] leading-[1.15] text-ink sm:text-3xl md:text-5xl">
             {img.text || "Whatever the kitchen needs tonight, from plots nearby."}
           </h1>
           <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink/70">

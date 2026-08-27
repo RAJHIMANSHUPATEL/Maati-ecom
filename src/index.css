@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-paper text-ink antialiased;
+  }
+  body {
+    @apply bg-paper font-sans text-ink;
+  }
+  ::selection {
+    background: #e8d3c4;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+  textarea,
+  select {
+    background-color: transparent;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #1c1917;
+    box-shadow: 0 0 0 1000px #f3eee4 inset;
+    transition: background-color 9999s ease-out;
+  }
+}
+
+@layer components {
+  [data-testid="input"] {
+    background-color: transparent;
+  }
+  [data-testid="input"] input {
+    background-color: transparent;
+  }
+}

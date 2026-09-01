@@ -3,9 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/vite-build.mjs",
+    "build:demo": "node scripts/vite-build.mjs demo",
+    "build:production": "node scripts/vite-build.mjs production",
     "lint": "eslint .",
     "preview": "vite preview"
   },
